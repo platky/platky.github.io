@@ -4,6 +4,8 @@ jQuery(function($) {
 	var preloader = $('.preloader');
 	$(window).load(function(){
 		preloader.remove();
+
+		alert("This is just the framework, non-functioning currently");
 	});
 
 	//#main-slider
