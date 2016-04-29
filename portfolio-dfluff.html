@@ -1,0 +1,100 @@
+<div id="single-portfolio">
+    <div id="portfolio-details" class="container">
+        <a class="close-folio-item" href="#"><i class="fa fa-times"></i></a>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="project-info">
+                    <h2>dfluff Web Application</h2>
+                    <div>
+                        <img class="portfolio-icon" src="images/lang-icons/javascript/javascript-original.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/html5/html5-original-wordmark.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/css3/css3-original-wordmark.svg">
+                        <img class="portfolio-icon"
+                             src="images/lang-icons/amazonwebservices/amazonwebservices-original-wordmark.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/php/php-original.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/mysql/mysql-original-wordmark.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/github/github-original-wordmark.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/jquery/jquery-original-wordmark.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/trello/trello-plain-wordmark.svg">
+                        <img class="portfolio-icon" src="images/lang-icons/ubuntu/ubuntu-plain-wordmark.svg">
+                    </div>
+                    <br>
+                    <h3>Information</h3>
+                    <p>dfluff is a web application designed around utilizing video in place of resumes. Features include
+                        video recording and
+                        uploading, video messaging, in-depth profile creation and utilization, custom search algorithms,
+                        detailed job postings
+                        and more.</p>
+                    <p>My role with dfluff is as the CTO (small company). This entails overseeing all technical aspects
+                        of the design and
+                        implementation of dfluff. I have personally set up all servers and systems as well as created
+                        the entire applications
+                        frontend and backend from scratch.</p>
+
+                    <h3>Tools</h3>
+                    <p>The frontend is mainly built in javascript/html/css as the first iteration is a
+                        web application. There are plans in the work for a dedicated iOS and Android release. The
+                        backend was built in php. Communication is done through a RESTful API.
+                        We utilize several AWS tools including EC2 servers, Amazon S3 for storage and Amazon RDS for our
+                        databases.</p>
+                    <p>Due to the complexity of the system several addons, plugins and api's were needed. These included
+                        the various AWS api's
+                        to interact with our servers, Symfony, Composer for package management, phpmailer for mailing
+                        users, FFMpeg for video manipulation,
+                        jQuery, video.js for frontend video display, and moment.js for timezone management.</p>
+
+                    <h3>Code</h3>
+                    <p>I cannot share source code as it is a closed project but I can outline and display snippets of
+                        code to demonstrate my methodologies.</p>
+
+                    <p><b>Script loader</b></p>
+                    <p>The website is dynamically designed and generated and has few html files. It is not a true single
+                        page design but takes many
+                        elements from it. The website has a lightweight look and it was one of our goals to make it have
+                        a lightweight feel. My first task
+                        in allowing for this was to build a "scriptloader". It is straightforward in implementation and
+                        allows me to only ever load exactly
+                        what I need at any given time.</p>
+                    <!--@formatter:off-->
+<pre class="line-numbers"><code class="language-javascript">function scriptLoader(url, callback){
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+
+    script.onload = function(){
+        if(callback!=null) {
+            callback();
+        }
+    };
+
+    script.src= url;
+    document.body.appendChild(script);
+}
+                    </code></pre>
+                    <!--@formatter:on-->
+                    <p>From here it is easy to just call on any file you need at any point. Through some planning you can
+                    mask the loading of scripts during other things to optimize times. Here's a quick example for loading
+                    the main profile page scripts. From within this page there are several other load points depending on
+                    what the user is doing.</p>
+                    <!--@formatter:off-->
+<pre class="line-numbers"><code class="language-javascript">scriptLoader("/javascripts/webpages/profile.js?" + version, function () {
+    profileModule = createProfileModule();
+    ProfilePage = new profileModule.Profile();
+});
+                    </code></pre>
+                    <!--@formatter:on-->
+
+                    <p><b>More to come... Feel free to message me with questions!</b></p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="project-details">
+                    <h3>Project Details</h3>
+                    <p><span>Client: </span>Web Application</p>
+                    <p><span>Date: </span>Nov 2015 - Current</p>
+                    <p><span>Tag: </span>Web, Video, Frontend, Backend</p>
+                    <p><span>Link: </span><a href="https://www.dfluff.com" target="_blank">www.dfluff.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,7 @@ jQuery(function($) {
 	$(window).load(function(){
 		preloader.remove();
 
-		alert("This is just the framework, non-functioning currently");
+		//alert("This is just the framework, non-functioning currently");
 	});
 
 	//#main-slider
@@ -104,6 +104,7 @@ jQuery(function($) {
 		$('html, body').animate({scrollTop:target_top}, 600);
 		$('#portfolio-single').slideUp(500, function(){
 			$(this).load(link,function(){
+				Prism.highlightAll();
 				$(this).slideDown(500);
 			});
 		});
